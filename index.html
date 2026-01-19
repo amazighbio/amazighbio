@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique Instagram</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      margin: 0;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 15px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .container {
+      max-width: 420px;
+      margin: 20px auto;
+      padding: 10px;
+    }
+
+    .produit {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .produit img {
+      width: 100%;
+      display: block;
+    }
+
+    .info {
+      padding: 12px;
+    }
+
+    .nom {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .prix {
+      color: green;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #0095f6;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0077c2;
+    }
+  </style>
+</head>
+<body>
+
+<header>Ma Boutique Instagram</header>
+
+<div class="container">
+
+  <div class="produit">
+    <img src="https://via.placeholder.com/400x400" alt="Produit 1">
+    <div class="info">
+      <div class="nom">T-shirt Premium</div>
+      <div class="prix">15 €</div>
+      <button onclick="commander('T-shirt Premium', '15 €')">
+        Commander sur WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <div class="produit">
+    <img src="https://via.placeholder.com/400x400" alt="Produit 2">
+    <div class="info">
+      <div class="nom">Chaussures Sport</div>
+      <div class="prix">45 €</div>
+      <button onclick="commander('Chaussures Sport', '45 €')">
+        Commander sur WhatsApp
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function commander(produit, prix) {
+    var numeroWhatsApp = "00212620952106"; // 🔴 REMPLACE par ton numéro
+    var message = "Bonjour, je souhaite commander : " + produit + " au prix de " + prix + ".";
+    var lien = "https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(message);
+    window.open(lien, "_blank");
+  }
+</script>
+
+</body>
+</html>
